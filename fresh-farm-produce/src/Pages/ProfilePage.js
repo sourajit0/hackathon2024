@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import FarmerInfo from "./compProfilePage/FarmerProfile";
+import "./StyleProfile.css/StyleProfile.css";
 
 function FarmerProfile() {
   // State variables to hold farmer information
@@ -21,41 +23,18 @@ function FarmerProfile() {
 
   return (
     <div className="container">
-      <div className="profile">
-        <img src={image} alt="Profile Picture" />
-        <div>
-          {editable ? (
-            <form onSubmit={handleSubmit}>
-              <label>Name:</label>
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-              <label>Location:</label>
-              <input
-                type="text"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-              />
-              <label>Image URL:</label>
-              <input
-                type="text"
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
-              />
-              <button type="submit">Save</button>
-            </form>
-          ) : (
-            <>
-              <h2>{name}</h2>
-              <p>Location: {location}</p>
-              <p>Email: farmer@example.com</p>
-              <button onClick={toggleEdit}>Edit</button>
-            </>
-          )}
-        </div>
-      </div>
+      <h1 className="heading">Farmer Profile</h1>
+      <FarmerInfo
+        name={name}
+        location={location}
+        image={image}
+        editable={editable}
+        onNameChange={(e) => setName(e.target.value)}
+        onLocationChange={(e) => setLocation(e.target.value)}
+        onImageChange={(e) => setImage(e.target.value)}
+        onSubmit={handleSubmit}
+        onToggleEdit={toggleEdit}
+      />
     </div>
   );
 }

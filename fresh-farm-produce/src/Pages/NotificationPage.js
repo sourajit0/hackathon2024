@@ -1,37 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import NotificationItem from './compNotification/compNotification'; // Notification item component
+import './StyleNotification/StyleNotification.css'
+import './compNotification/compNotification.css'
 
 function NotificationPage() {
-  // State variable to hold notifications
-  const [notifications, setNotifications] = useState([
-    { id: 1, message: "New order received" },
-    { id: 2, message: "Payment processed successfully" },
-    { id: 3, message: "Delivery scheduled for tomorrow" },
-  ]);
+  const [notifications, setNotifications] = useState([]);
 
-  // Function to remove a notification
-  const removeNotification = (id) => {
-    setNotifications(
-      notifications.filter((notification) => notification.id !== id)
-    );
-  };
+  // Fetch notifications from backend when the component mounts
+  useEffect(() => {
+    // Make API request to fetch notifications
+    // Update state with fetched notifications
+  }, []);
 
   return (
-    <div className="container">
-      <h2>Notifications</h2>
-      {notifications.length > 0 ? (
-        <ul>
-          {notifications.map((notification) => (
-            <li key={notification.id}>
-              {notification.message}
-              <button onClick={() => removeNotification(notification.id)}>
-                Dismiss
-              </button>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No new notifications</p>
-      )}
+    <div>
+      <h1>Notifications</h1>
+      <div>
+        {notifications.map(notification => (
+          <NotificationItem key={notification.id} notification={notification} />
+        ))}
+      </div>
     </div>
   );
 }
