@@ -1,0 +1,39 @@
+.card {
+  width: 200px;
+  height: 200px;
+  border-radius: 20%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  margin: 15px;
+  padding: 10px;
+}
+
+
+.card-image {
+  max-width: 100%;
+  height: auto;
+  margin-left: 22px;
+  margin-top: 20px;
+  
+}
+
+.card:hover {
+  transform: scale(1.06); /* Scale up the card on hover */
+}
+
+.content {
+  
+  padding: 20px;
+  padding-top:0px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
