@@ -1,65 +1,38 @@
 import React, { useState } from 'react';
-import "./Style/manage_product.css";
+import Card from './comp/Card1';
+import './Style1/manage_product.css';
+import './comp/box.css'; // Importing CSS file
 
-const ManageProducts = () => {
-  const [products, setProducts] = useState([]);
-  const [productName, setProductName] = useState('');
-  const [productPrice, setProductPrice] = useState('');
 
-  const handleProductNameChange = (e) => {
-    setProductName(e.target.value);
+const ProductList = () => {
+  const [products, setProducts] = useState([
+    { id: 1, name: 'Product 1', price: "200$", image: 'product1.jpg' },
+    { id: 2, name: 'Product 2', price: "300$", image: 'product2.jpg' },
+    // Add more products as needed
+  ]);
+
+  const handleDelete = (id) => {
+    setProducts(products.filter(product => product.id !== id));
   };
 
-  const handleProductPriceChange = (e) => {
-    setProductPrice(e.target.value);
-  };
-
-  const handleAddProduct = () => {
-    if (productName && productPrice) {
-      const newProduct = {
-        id: new Date().getTime(),
-        name: productName,
-        price: parseFloat(productPrice),
-      };
-      setProducts([...products, newProduct]);
-      setProductName('');
-      setProductPrice('');
-    }
-  };
-
-  const handleDeleteProduct = (id) => {
-    const updatedProducts = products.filter((product) => product.id !== id);
-    setProducts(updatedProducts);
+  const handleEdit = (id) => {
+    // Implement edit functionality
+    console.log(`Editing product with id ${id}`);
   };
 
   return (
-    <div>
-      <h2>Manage Products</h2>
-      <div className='manage_Product'>
-        <input
-          type="text"
-          placeholder="Product Name"
-          value={productName}
-          onChange={handleProductNameChange}
+    <div className='containerBox' style={{minHeight:'700px'}}>
+      {products.map(product => (
+        <Card
+          key={product.id}
+          product={product}
+          onDelete={handleDelete}
+          onEdit={handleEdit}
         />
-        <input
-          type="number"
-          placeholder="Price"
-          value={productPrice}
-          onChange={handleProductPriceChange}
-        />
-        <button onClick={handleAddProduct}>Add Product</button>
-      </div>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            {product.name} - ${product.price}{' '}
-            <button onClick={() => handleDeleteProduct(product.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      ))}
+      <div className='massage'>No More product left</div>
     </div>
   );
 };
 
-export default ManageProducts;
+export default ProductList;

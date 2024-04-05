@@ -1,0 +1,30 @@
+.massage{
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    border: 1px solid white ;
+    width: 90%;
+    margin-left:5%;
+    margin-right: 5%;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 4px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+
+
+/* Media query for screens smaller than 768px */
+@media screen and (max-width: 768px) {
+    .message {
+        font-size: .8rem; /* Reduce font size for smaller screens */
+    }
+}
+
+/* Media query for screens smaller than 576px */
+@media screen and (max-width: 576px) {
+    .message {
+        font-size: .2rem; /* Further reduce font size for very small screens */
+
+    }
+}
