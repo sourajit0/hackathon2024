@@ -7,7 +7,7 @@ function Card({ image, title, onClick }) {
       <img src={image} alt={title} className="card-image" />
       <div className="content">
         <h2>{title}</h2>
-        <p>Description goes here...</p>
+        
       </div>
     </div>
   );

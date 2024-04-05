@@ -10,16 +10,16 @@ const CardContainer = () => {
   return (
     <>
       <div className="msg-farmer">
-        Your Ultimate Destination for Selling Your Harvest
+        Your Ultimate Destination for Selling Your <span style={{color:"#a9ff00"}}>Harvest</span>
       </div>
       <div className="card-container">
-        <Link to="/add-product">
+        <Link to="/add-product"style={{ textDecoration: 'none', color: 'inherit' }}>
           <Card image={market} title="Add Products" />
         </Link>
-        <Link to="/manage-product">
+        <Link to="/manage-product" style={{ textDecoration: 'none', color: 'inherit' }}>
           <Card image={manage} title="Manage Products" />
         </Link>
-        <Link to="/order-list">
+        <Link to="/order-list" style={{ textDecoration: 'none', color: 'inherit' }}>
           <Card image={order} title="Order List" />
         </Link>
       </div>
