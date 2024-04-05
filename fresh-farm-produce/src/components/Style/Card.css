@@ -20,7 +20,7 @@
 }
 
 .card:hover {
-  transform: scale(1.06); /* Scale up the card on hover */
+  transform: scale(1.18); /* Scale up the card on hover */
 }
 
 .content {

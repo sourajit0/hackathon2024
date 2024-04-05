@@ -53,7 +53,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom" style={styles.bottom}>
-        <p>&copy; 2024 Fresh Farm Produce. All rights reserved.</p>
+        <p>&copy; 2024 GreenGrocer. All rights reserved.</p>
       </div>
     </footer>
   );

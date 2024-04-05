@@ -13,7 +13,7 @@ const CardContainer = () => {
         Your Ultimate Destination for Selling Your <span style={{color:"#a9ff00"}}>Harvest</span>
       </div>
       <div className="card-container">
-        <Link to="/add-product"style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link to="/add-product"style={{ textDecoration: 'none', color: 'white' }}>
           <Card image={market} title="Add Products" />
         </Link>
         <Link to="/manage-product" style={{ textDecoration: 'none', color: 'inherit' }}>
