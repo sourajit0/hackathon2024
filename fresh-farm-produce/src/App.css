@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+
+
+
+
+.background {
+  background-image: url('bg.jpeg');
+  background-size: cover; /* Cover the entire container */
+  background-repeat: no-repeat; /* Prevent image from repeating */
+}
