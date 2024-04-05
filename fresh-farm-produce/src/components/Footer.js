@@ -1,16 +1,20 @@
 import React from "react";
-import Logo from './logo.png'; // Import your logo
-import Instagram from './instagram_logo.png';
-import facebook from './facebook_logo.png';
-import Twitter from './twitter_icon.png';
+import Logo from "./logo.png"; // Import your logo
+import Instagram from "./instagram_logo.png";
+import facebook from "./facebook_logo.png";
+import Twitter from "./twitter_icon.png";
 function Footer() {
   return (
     <footer style={styles.footer}>
       <div className="footer-inner" style={styles.inner}>
         <div className="column" style={styles.column}>
-          <img src={Logo} alt="Logo"  style={{height:"40px"}}/>
-          <br/>{""}
-          <br/>{""}
+          <a href="/">
+            <img src={Logo} alt="Logo" style={{ height: "40px" }} />
+          </a>
+          <br />
+          {""}
+          <br />
+          {""}
           <h3>Contact Us</h3>
           <p>Email: info@GreenGrocer.com</p>
           <p>Phone: 123-456-7890</p>
@@ -18,18 +22,26 @@ function Footer() {
         </div>
         <div className="column" style={styles.column}>
           <h3>Quick Links</h3>
-          <ul style={{ listStyleType: 'none' }}>
+          <ul style={{ listStyleType: "none" }}>
             <li>
-              <a href="#" style={{ color: '#a9ff00', textDecoration: 'none' }}>Home</a>
+              <a href="/" style={{ color: "#a9ff00", textDecoration: "none" }}>
+                Home
+              </a>
             </li>
             <li>
-              <a href="#" style={{ color: '#a9ff00', textDecoration: 'none' }}>About Us</a>
+              <a href="#" style={{ color: "#a9ff00", textDecoration: "none" }}>
+                About Us
+              </a>
             </li>
             <li>
-              <a href="#" style={{ color: '#a9ff00', textDecoration: 'none' }}>Products</a>
+              <a href="#" style={{ color: "#a9ff00", textDecoration: "none" }}>
+                Products
+              </a>
             </li>
             <li>
-              <a href="#" style={{ color: '#a9ff00', textDecoration: 'none' }}>Contact Us</a>
+              <a href="#" style={{ color: "#a9ff00", textDecoration: "none" }}>
+                Contact Us
+              </a>
             </li>
           </ul>
         </div>
@@ -39,15 +51,27 @@ function Footer() {
           <div style={styles.socialIcons}>
             <a href="#">
               <i className="fab fa-facebook-f"></i>
-              <img src={facebook} alt="Logo"  style={{height:"30px" , marginRight:"30px"}}/>
+              <img
+                src={facebook}
+                alt="Logo"
+                style={{ height: "30px", marginRight: "30px" }}
+              />
             </a>
             <a href="#">
               <i className="fab fa-twitter"></i>
-              <img src={Twitter} alt="Logo"  style={{height:"30px" , marginRight:"30px"}}/>
+              <img
+                src={Twitter}
+                alt="Logo"
+                style={{ height: "30px", marginRight: "30px" }}
+              />
             </a>
             <a href="#">
               <i className="fab fa-instagram"></i>
-              <img src={Instagram} alt="Logo"  style={{height:"30px",  marginRight:"30px"}}/>
+              <img
+                src={Instagram}
+                alt="Logo"
+                style={{ height: "30px", marginRight: "30px" }}
+              />
             </a>
           </div>
         </div>
