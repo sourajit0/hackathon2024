@@ -1,0 +1,36 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.heading {
+  font-size: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ffffff; /* Text color changed to white */
+}
+
+.orders-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.order-item {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.customer-name {
+  margin-top: 0;
+  color: #ffffff; /* Text color changed to white */
+}
+
+.product,
+.quantity,
+.total {
+  margin: 5px 0;
+  color: #ffffff; /* Text color changed to white */
+}

@@ -1,28 +1,32 @@
-.card_div{
+/* Default styles */
+.card_div {
   width: 100%;
 }
+
 .card1 {
+  position: relative; /* Relative positioning for absolute children */
   display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap to new line */
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: rgba(0,0,0,0.5); 
-  width: 100%; 
-  max-width: 90%; 
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 90%;
   margin-left: 5%;
   margin-top: 20px;
-  justify-content: center;
 }
 
-.card1:hover{
+.card1:hover {
   background-color: #000000ca;
   transition: background-color 0.3s ease;
 }
+
 .card1-img {
   flex: 0 0 auto;
-  padding-right: 30%;
+  padding-right: 30px; /* Adjusted padding for smaller screens */
   margin: 10px;
 }
 
@@ -35,26 +39,29 @@
 
 .card1-info {
   display: flex;
+  flex-direction: column; /* Change to column layout */
   flex: 1 1 auto;
   padding: 20px;
-  padding-right: 30%;
 }
 
 .card1-info h3 {
-  display: flex;
   margin: 0;
   color: #ffffff;
   padding-right: 40%;
-
 }
 
+.card1-info p {
+  margin: 0;
+  color: #ffffff; /* Text color changed to white */
+  padding-right: 40%;
+}
 
 .card1-buttons {
+  position: absolute; /* Absolute positioning */
+  bottom: 10px;
+  right: 10px;
   display: flex;
-  margin-top: 10px;
-  padding-right: 0%;
-  padding: 30px;
-
+  flex-wrap: wrap; /* Allow buttons to wrap to new line */
 }
 
 .card1-buttons button {
@@ -64,10 +71,8 @@
   background-color: #ffffff;
   color: #000000;
   cursor: pointer;
-}
-
-.card1-buttons button + button {
-  margin-left: 10px;
+  margin-right: 10px; /* Adjusted margin for smaller screens */
+  margin-bottom: 10px; /* Adjusted margin for smaller screens */
 }
 
 .card1-buttons button:hover {
@@ -78,5 +83,11 @@
   background-color: #004080;
 }
 
-
-
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .card1-buttons {
+    position: static; /* Reset position */
+    margin-top: 10px; /* Adjust margin */
+    justify-content: center; /* Center buttons */
+  }
+}
