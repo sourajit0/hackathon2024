@@ -13,13 +13,15 @@ function NotificationPage() {
   }, []);
 
   return (
-    <div>
-      <h1>Notifications</h1>
+    <div className='container'>
+    <div >
+      <h1 style={{color:"white"}}>Notifications</h1>
       <div>
         {notifications.map(notification => (
           <NotificationItem key={notification.id} notification={notification} />
         ))}
       </div>
+    </div>
     </div>
   );
 }
