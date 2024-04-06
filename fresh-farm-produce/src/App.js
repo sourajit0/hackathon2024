@@ -11,6 +11,7 @@ import AddProduct from "./Pages/AddProduct";
 import ManageProduct from "./Pages/ManageProduct";
 import OrderList from "./Pages/OrderList";
 import CardContainer from "./components/CardCon";
+import ParentPage from "./Pages/ParentPage";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/add-product" element={<AddProduct />} />
               <Route path="/manage-product" element={<ManageProduct />} />
               <Route path="/order-list" element={<OrderList />} />
+              <Route path="/parent_page" element={<ParentPage />} />
             </Routes>
           </div>
         </Router>

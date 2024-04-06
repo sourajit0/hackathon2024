@@ -15,9 +15,9 @@ const OrdersPage = () => {
     // Simulate fetch orders data
     setTimeout(() => {
       const exampleOrders = [
-        { id: 1, customerName: 'John Doe', productName: 'Apples', quantity: 5, total: 10, image: 'apple.jpg' },
-        { id: 2, customerName: 'Jane Smith', productName: 'Oranges', quantity: 3, total: 6, image: 'orange.jpg' },
-        { id: 3, customerName: 'Alice Johnson', productName: 'Bananas', quantity: 2, total: 4, image: 'banana.jpg' }
+        // { id: 1, customerName: 'John Doe', productName: 'Apples', quantity: 5, total: 10, image: 'apple.jpg' },
+        // { id: 2, customerName: 'Jane Smith', productName: 'Oranges', quantity: 3, total: 6, image: 'orange.jpg' },
+        // { id: 3, customerName: 'Alice Johnson', productName: 'Bananas', quantity: 2, total: 4, image: 'banana.jpg' }
       ];
       setOrders(exampleOrders);
     }, 1000); // Simulate delay
