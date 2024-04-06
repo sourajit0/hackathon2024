@@ -1,4 +1,6 @@
 import React from "react";
+import Login from "./Login/login";
+import Signup from "./Signup/Signup";
 
 function LogoutPage() {
   // Function to handle logout action
@@ -15,9 +17,7 @@ function LogoutPage() {
 
   return (
     <div>
-      <h2>Logout</h2>
-      <p>You have been successfully logged out.</p>
-      {/* You can also add a link here to redirect users back to the login page */}
+      <Login />
     </div>
   );
 }

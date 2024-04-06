@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Style/AddProduct.css";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 const ProductFormCard = ({ onSubmitForm }) => {
   let navigate = useNavigate();
@@ -21,12 +21,12 @@ const ProductFormCard = ({ onSubmitForm }) => {
       productName,
       productPrice,
       productQuantity,
-      productImage
+      productImage,
     };
 
     onSubmitForm(formData);
 
-    navigate('/parent_page');
+    navigate("/parent_page");
 
     // Clear form fields
     setProductName("");
@@ -39,10 +39,17 @@ const ProductFormCard = ({ onSubmitForm }) => {
     <div className="form_final">
       <div className="card-product-form-card">
         <div className="card-body">
-          <h5 className="card-title" style={{ fontSize: "40px" }}>Upload Product</h5>
+          <h5 className="card-title" style={{ fontSize: "40px" }}>
+            Upload Product
+          </h5>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="productName" style={{ fontSize: "20px", fontWeight: "10000" }}>Product Name</label>
+              <label
+                htmlFor="productName"
+                style={{ fontSize: "20px", fontWeight: "10000" }}
+              >
+                Product Name
+              </label>
               <input
                 type="text"
                 className="form-control"
@@ -52,7 +59,12 @@ const ProductFormCard = ({ onSubmitForm }) => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="productPrice" style={{ fontSize: "20px", fontWeight: "10000" }}>Product Price</label>
+              <label
+                htmlFor="productPrice"
+                style={{ fontSize: "20px", fontWeight: "10000" }}
+              >
+                Product Price
+              </label>
               <input
                 type="number"
                 className="form-control"
@@ -62,7 +74,12 @@ const ProductFormCard = ({ onSubmitForm }) => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="productQuantity" style={{ fontSize: "20px", fontWeight: "10000" }}>Product Quantity</label>
+              <label
+                htmlFor="productQuantity"
+                style={{ fontSize: "20px", fontWeight: "10000" }}
+              >
+                Product Quantity
+              </label>
               <input
                 type="number"
                 className="form-control"
@@ -72,7 +89,12 @@ const ProductFormCard = ({ onSubmitForm }) => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="productImage" style={{ fontSize: "20px", fontWeight: "10000" }}>Product Image</label>
+              <label
+                htmlFor="productImage"
+                style={{ fontSize: "20px", fontWeight: "10000" }}
+              >
+                Product Image
+              </label>
               <input
                 type="file"
                 className="form-control-file"

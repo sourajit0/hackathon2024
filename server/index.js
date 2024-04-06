@@ -1,29 +1,87 @@
-// const mysql = require("mysql");
+const express = require("express");
+const mysql = require("mysql2/promise");
+const multer = require("multer");
 const fs = require("fs");
-const mysql = require("mysql2");
+const cors = require("cors"); // Import the cors package
 
-// Create a connection to the database
-const connection = mysql.createConnection({
+const app = express();
+const port = 3001;
+
+app.use(cors()); // Enable CORS for all routes
+app.use(express.json());
+
+app.use(express.json());
+
+const pool = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "qwerty69",
   database: "farm",
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
 });
 
-// Read the image file
-const image = fs.readFileSync(
-  "/Users/sourajitsamanta/Documents/GitHub/hackathon2024/server/image.png"
-);
+const upload = multer({ dest: "uploads/" });
 
-// Insert the image into the database
-connection.query(
-  "INSERT INTO farmers (username, password, image, location) VALUES (?, ?, ?, ?)",
-  ["user", "pass", image, "loca"],
-  (error, results, fields) => {
-    if (error) throw error;
-    console.log("Image inserted successfully");
+// Signup route
+app.post("/signup", upload.single("image"), async (req, res) => {
+  const { username, password, location } = req.body;
+  const imageFile = req.file;
+
+  try {
+    if (!imageFile) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Image is required" });
+    }
+
+    const image = fs.readFileSync(imageFile.path);
+
+    const connection = await pool.getConnection();
+    await connection.execute(
+      "INSERT INTO farmers (username, password, image, location) VALUES (?, ?, ?, ?)",
+      [username, password, image, location]
+    );
+    connection.release();
+
+    res.json({ success: true, message: "Signup successful" });
+  } catch (error) {
+    console.error("Error during signup:", error);
+    res
+      .status(500)
+      .json({ success: false, message: "An error occurred during signup" });
   }
-);
+});
 
-// Close the connection
-connection.end();
+// Login route
+app.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    const connection = await pool.getConnection();
+    const [rows] = await connection.execute(
+      "SELECT id FROM farmers WHERE username = ? AND password = ?",
+      [username, password]
+    );
+    connection.release();
+
+    if (rows.length > 0) {
+      const userId = rows[0].id;
+      res.json({ success: true, message: "Login successful", userId });
+    } else {
+      res
+        .status(401)
+        .json({ success: false, message: "Invalid username or password" });
+    }
+  } catch (error) {
+    console.error("Error during login:", error);
+    res
+      .status(500)
+      .json({ success: false, message: "An error occurred during login" });
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
+});
