@@ -8,9 +8,9 @@ function Footer() {
     <footer style={styles.footer}>
       <div className="footer-inner" style={styles.inner}>
         <div className="column" style={styles.column}>
-          <Link href="/">
+          <a href="/">
             <img src={Logo} alt="Logo" style={{ height: "40px" }} />
-          </Link>
+          </a>
           <br />
           {""}
           <br />
@@ -24,24 +24,24 @@ function Footer() {
           <h3>Quick Links</h3>
           <ul style={{ listStyleType: "none" }}>
             <li>
-              <Link href="/" style={{ color: "#a9ff00", textDecoration: "none" }}>
+              <a href="/" style={{ color: "#a9ff00", textDecoration: "none" }}>
                 Home
-              </Link>
+              </a>
             </li>
             <li>
-              <Link href="#" style={{ color: "#a9ff00", textDecoration: "none" }}>
+              <a href="#" style={{ color: "#a9ff00", textDecoration: "none" }}>
                 About Us
-              </Link>
+              </a>
             </li>
             <li>
-              <Link href="#" style={{ color: "#a9ff00", textDecoration: "none" }}>
+              <a href="#" style={{ color: "#a9ff00", textDecoration: "none" }}>
                 Products
-              </Link>
+              </a>
             </li>
             <li>
-              <Link href="#" style={{ color: "#a9ff00", textDecoration: "none" }}>
+              <a href="#" style={{ color: "#a9ff00", textDecoration: "none" }}>
                 Contact Us
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
@@ -49,30 +49,30 @@ function Footer() {
           <h3>Follow Us</h3>
           <p>Stay updated on our latest news and offers</p>
           <div style={styles.socialIcons}>
-            <Link href="#">
+            <a href="#">
               <i className="fab fa-facebook-f"></i>
               <img
                 src={facebook}
                 alt="Logo"
                 style={{ height: "30px", marginRight: "30px" }}
               />
-            </Link>
-            <Link href="#">
+            </a>
+            <a href="#">
               <i className="fab fa-twitter"></i>
               <img
                 src={Twitter}
                 alt="Logo"
                 style={{ height: "30px", marginRight: "30px" }}
               />
-            </Link>
-            <Link href="#">
+            </a>
+            <a href="#">
               <i className="fab fa-instagram"></i>
               <img
                 src={Instagram}
                 alt="Logo"
                 style={{ height: "30px", marginRight: "30px" }}
               />
-            </Link>
+            </a>
           </div>
         </div>
       </div>

@@ -1,12 +1,12 @@
 import "./App.css";
 import NavScrollExample from "./components/NavScrollExample";
 import Footer from "./components/Footer";
-import AppRouterPages from "./router";
+// import AppRouterPages from "./router";
 import ProfilePage from "./Pages/ProfilePage";
 import NotificationPage from "./Pages/NotificationPage";
 import LogoutPage from "./Pages/LogoutPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useRouteMatch } from "react-router-dom";
+// import { useRouteMatch } from "react-router-dom";
 import AddProduct from "./Pages/AddProduct";
 import ManageProduct from "./Pages/ManageProduct";
 import OrderList from "./Pages/OrderList";
