@@ -1,27 +1,54 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .form-container {
-    display: flex;
-  }
-  
-  .login-form,
-  .signup-form {
-    background-color: rgba(0, 0, 0, 0.5); /* Translucent black background */
-    padding: 20px;
-    border-radius: 8px;
-    flex: 1;
-  }
-  
-  .signup-form {
-    margin-right: 10px; /* Add some space between forms */
-  }
-  
-  .login-form {
-    margin-left: 10px; /* Add some space between forms */
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between; /* Align forms side by side */
+  width: 60%; /* Adjust the width of the forms container */
+}
+
+.signup-form,
+.login-form {
+  width: 45%; /* Set the width of each form */
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.signup-form h2,
+.login-form h2 {
+  color: #1eff00;
+}
+
+.signup-form label,
+.login-form label {
+  font-weight: bold;
+}
+
+.signup-form input,
+.login-form input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signup-form button,
+.login-form button {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #82d757;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signup-form button:hover,
+.login-form button:hover {
+  background-color: #82b816;
+}

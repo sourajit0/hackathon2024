@@ -36,7 +36,7 @@ const OrdersPage = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container4">
       <h1 className="heading">Orders Received</h1>
       <div className='outer'>
       <div className="orders-list">
