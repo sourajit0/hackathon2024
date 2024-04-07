@@ -8,7 +8,7 @@ function Footer() {
     <footer style={styles.footer}>
       <div className="footer-inner" style={styles.inner}>
         <div className="column" style={styles.column}>
-          <a href="/">
+          <a href="#">
             <img src={Logo} alt="Logo" style={{ height: "40px" }} />
           </a>
           <br />

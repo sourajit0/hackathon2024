@@ -14,7 +14,7 @@ function NavScrollExample() {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <a href="/">
+        <a href="#">
           <img
             src={logo}
             height="35"
