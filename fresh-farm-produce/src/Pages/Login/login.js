@@ -4,6 +4,11 @@ import React, { useState } from "react";
 import { useCurrentUser } from "./CurrentUserContext";
 import HomePage from "../../homePage";
 import Signup from "../Signup/Signup";
+import footer from "../../components/Footer"
+
+import Navlog from "./nav";
+import "./loginStyle.css"
+
 
 const Login = () => {
   const { setUser } = useCurrentUser();
@@ -43,35 +48,40 @@ const Login = () => {
 
   // Render login form if not logged in
   return (
-    <div>
-      <div>
-        <Signup />
-      </div>
-      <div>
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-          <br />
-          <br />
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <br />
-          <br />
-          <button type="submit">Login</button>
-        </form>
+<div>
+      <Navlog /> {/* Include the navbar component */}
+      <div className="container">
+        <div className="form-container">
+          <div className="signup-form">
+            <Signup />
+          </div>
+          <div className="login-form">
+            <h2>Login</h2>
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="username">Username:</label>
+              <input
+                type="text"
+                id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+              <br />
+              <br />
+              <label htmlFor="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <br />
+              <br />
+              <button type="submit">Login</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   );
