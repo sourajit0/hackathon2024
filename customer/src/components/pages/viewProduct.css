@@ -1,0 +1,44 @@
+.product-card {
+    position: relative; /* Make the card a positioning context */
+    display: flex;
+    align-items: left;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: left;
+    overflow: hidden; /* Ensure that the overflow content doesn't overlap with the buttons */
+    position: relative; /* Add position relative */
+}
+
+.product-image img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.cart-controls {
+    position: absolute; /* Position absolute for the buttons */
+    bottom: 10px; /* 10px from the bottom */
+    right: 10px; /* 10px from the right */
+}
+
+.cart-controls button {
+    background-color: #82d757;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.cart-controls button:hover {
+    background-color: #82b816;
+}
