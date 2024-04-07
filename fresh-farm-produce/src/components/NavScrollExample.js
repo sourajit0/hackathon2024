@@ -29,7 +29,7 @@ function NavScrollExample() {
           <Link to="/profile">Profile</Link>
           <Link to="/notifications">Notification</Link>
           <div className="dropdown-divider"></div>
-          <Link to="/logout">Logout</Link>
+          <a href="/">Logout</a>
         </div>
       </div>
     </nav>
