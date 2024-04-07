@@ -1,4 +1,4 @@
-.container {
+.container2 {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -10,6 +10,10 @@
   margin-bottom: 20px;
   text-align: center;
   color: #ffffff; /* Text color changed to white */
+}
+
+.outer {
+  min-height: 500px;
 }
 
 .orders-list {
@@ -34,8 +38,4 @@
 .total {
   margin: 5px 0;
   color: #ffffff; /* Text color changed to white */
-}
-
-.outer{
-  min-height: 500px;
 }
