@@ -1,4 +1,5 @@
-.container {
+.container123 {
+    display: block;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -26,6 +27,7 @@
     border-radius: 50%; /* Make the image circular */
     margin-bottom: 20px; /* Add space between image and details */
     object-fit: cover;
+    margin-top: 30px;
   }
   
   .profile div {

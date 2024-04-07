@@ -81,6 +81,33 @@ app.post("/login", async (req, res) => {
       .json({ success: false, message: "An error occurred during login" });
   }
 });
+// Get current user profile
+app.get("/profile/:userId", async (req, res) => {
+  const userId = req.params.userId;
+
+  try {
+    const connection = await pool.getConnection();
+    const [rows] = await connection.execute(
+      "SELECT * FROM farmers WHERE id = ?",
+      [userId]
+    );
+    connection.release();
+
+    if (rows.length > 0) {
+      const userProfile = rows[0];
+      res.json({ success: true, profile: userProfile });
+    } else {
+      res
+        .status(404)
+        .json({ success: false, message: "User profile not found" });
+    }
+  } catch (error) {
+    console.error("Error fetching user profile:", error);
+    res
+      .status(500)
+      .json({ success: false, message: "Failed to fetch user profile" });
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
