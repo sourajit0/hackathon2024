@@ -1,29 +1,17 @@
 import React from "react";
 import "./App.css";
-import ProfilePage from "./Pages/ProfilePage";
-import NotificationPage from "./Pages/NotificationPage";
-import LogoutPage from "./Pages/LogoutPage";
-// import HomePage from "./homePage";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import { useCurrentUser } from "./Pages/Login/CurrentUserContext";
 import Login from "./Pages/Login/login";
-import { CurrentUserProvider } from "./Pages/Login/CurrentUserContext";
-import NavScrollExample from "./components/NavScrollExample";
-import Footer from "./components/Footer";
-import Signup from "./Pages/Signup/Signup";
+import HomePage from "./homePage";
 
 function App() {
+  const { user } = useCurrentUser(); // Extract user from the context
+  if (user) {
+    alert(JSON.stringify(user)); // Convert user object to string and display in alert
+  }
   return (
-    <div
-      className="background"
-      style={{
-        minHeight: "100vh",
-        color: "white",
-      }}
-    >
-      <CurrentUserProvider>
-        <Login />
-      </CurrentUserProvider>
+    <div className="background" style={{ minHeight: "100vh", color: "white" }}>
+      {user ? <HomePage /> : <Login />}
     </div>
   );
 }

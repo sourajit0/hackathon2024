@@ -14,7 +14,7 @@ function NavScrollExample() {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <a href="#">
+        <a href="/">
           <img
             src={logo}
             height="35"
@@ -29,7 +29,7 @@ function NavScrollExample() {
           <Link to="/profile">Profile</Link>
           <Link to="/notifications">Notification</Link>
           <div className="dropdown-divider"></div>
-          <a href="/">Logout</a>
+          <Link to="/Logout">Logout</Link>
         </div>
       </div>
     </nav>

@@ -1,21 +1,24 @@
-// Login.js
-import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import { useCurrentUser } from "./CurrentUserContext";
 import HomePage from "../../homePage";
 import Signup from "../Signup/Signup";
-import footer from "../../components/Footer"
-
 import Navlog from "./nav";
-import "./loginStyle.css"
-
+import "./loginStyle.css";
 
 const Login = () => {
-  const { setUser } = useCurrentUser();
-  // const navigate = useNavigate();
+  const { user, setUser } = useCurrentUser();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loginSuccess, setLoginSuccess] = useState(false);
+
+  useEffect(() => {
+    // Check if user is already authenticated from localStorage
+    const storedUser = localStorage.getItem("currentUser");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+      setLoginSuccess(true); // Set login success flag
+    }
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -28,9 +31,13 @@ const Login = () => {
         body: JSON.stringify({ username, password }),
       });
       const data = await response.json();
+
       if (data.success) {
         const { userId } = data;
+
         setUser(userId);
+
+        localStorage.setItem("currentUser", JSON.stringify(userId)); // Save user to localStorage
         setLoginSuccess(true); // Set login success flag
       } else {
         alert("Login failed. Please check your credentials.");
@@ -48,7 +55,7 @@ const Login = () => {
 
   // Render login form if not logged in
   return (
-<div>
+    <div>
       <Navlog /> {/* Include the navbar component */}
       <div className="container">
         <div className="form-container">
