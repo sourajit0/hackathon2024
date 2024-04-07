@@ -40,6 +40,9 @@ function ViewProductsPage() {
                     <ProductCard key={product.id} product={product} />
                 ))}
             </div>
+            <button className='AddToCart' style={{margin:"20px"}}>
+                Add to Cart
+            </button>
             
             <Footer />
         </div>

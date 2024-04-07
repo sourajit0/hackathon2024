@@ -103,6 +103,9 @@ const styles = {
     flex: "0 1 calc(33.33% - 40px)", // Three columns with 40px spacing between
     margin: "0 20px",
     marginBottom: "20px",
+    textAllign: "left",
+    alignItems: "left",
+    justifyContent: "left",
   },
   socialIcons: {
     marginTop: "10px",

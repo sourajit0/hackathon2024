@@ -6,6 +6,7 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     margin-bottom: 20px;
+    margin: 22px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     text-align: left;
@@ -42,3 +43,16 @@
 .cart-controls button:hover {
     background-color: #82b816;
 }
+.AddToCart {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #82d757;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .AddToCart:hover {
+    background-color: #82b816; /* Darker green on hover */
+  }
