@@ -1,68 +1,56 @@
-.card-product-form-card {
-  margin: 100px auto; /* Adjust margin for centering */
-  max-width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: white;
+.product-upload-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px; /* Adjust margin as needed */
 }
 
-.card-title {
-  margin-top: 20px; /* Adjust margin */
-  margin-left: 20px;
-  padding-top: 5%;
+.card1000 {
+  background-color: #00000088;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  margin-bottom: 5%;
+}
+
+.card9000 h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .form-group {
   margin-bottom: 20px;
-  margin: 20px; /* Remove redundant margin declarations */
 }
 
-.form_final {
-  margin-top: 100px;
-  margin-bottom: 100px;
+.form-group label {
+  font-weight: bold;
 }
 
-.card-body {
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  max-width: 500px; /* Adjust max-width */
-  padding-top: 20px;
-
-}
-
-.form-control {
-  width: calc(100% - 20px); /* Adjust width for padding */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"] {
+  width: 100%;
   padding: 10px;
-  border-radius: 5px;
   border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.form-control-file {
-  display: block;
-  width: calc(100% - 20px); /* Adjust width for padding */
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.btn-btn-primary {
-  background-color: #82d757;
-  color: #fff;
+.form-group input[type="file"] {
   border: none;
-  border-radius: 10%;
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
-  margin-top: 20px; /* Adjust margin */
-  margin-left: 20px;
-  margin-bottom: 20px;
-
   transition: background-color 0.3s ease;
 }
 
-.btn-btn-primary:hover {
-  background-color: #82b816;
+button[type="submit"]:hover {
+  background-color: #45a049;
 }
-

@@ -13,7 +13,9 @@ import OrderList from "./Pages/OrderList";
 import CardContainer from "./components/CardCon";
 import ParentPage from "./Pages/ParentPage";
 import Signup from "./Pages/Signup/Signup";
+import ProductUploadPage from "./Pages/ProductUploadPage";
 // import Login from "./Pages/Login/login";
+// import ProductUploadPage from "./Pages/ProductUploadPage";
 
 function HomePage() {
   return (

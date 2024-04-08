@@ -1,22 +1,23 @@
-/* Default styles */
 .card_div {
-  width: 100%;
+  width: 100vw; /* Change width to full viewport width */
+  height: 100vh; /* Change height to full viewport height */
 }
 
 .card1 {
-  position: relative; /* Relative positioning for absolute children */
+  position: relative;
   display: flex;
-  flex-wrap: wrap; /* Allow buttons to wrap to new line */
+  flex-wrap: wrap;
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
+  width: 90vw; /* Change width to 90% of viewport width */
   max-width: 90%;
-  margin-left: 5%;
-  margin-top: 20px;
+  margin-left: 5vw; /* Adjust margin to center horizontally */
+  margin-top: 5vh; /* Adjust margin to center vertically */
+  /* justify-content: center; */
 }
 
 .card1:hover {
@@ -26,7 +27,7 @@
 
 .card1-img {
   flex: 0 0 auto;
-  padding-right: 30px; /* Adjusted padding for smaller screens */
+  padding-right: 30px;
   margin: 10px;
 }
 
@@ -39,8 +40,7 @@
 
 .card1-info {
   display: flex;
-  flex-direction: column; /* Change to column layout */
-  flex: 1 1 auto;
+  flex-direction: column;
   padding: 20px;
 }
 
@@ -52,16 +52,17 @@
 
 .card1-info p {
   margin: 0;
-  color: #ffffff; /* Text color changed to white */
+  color: #ffffff;
   padding-right: 40%;
 }
 
 .card1-buttons {
-  position: absolute; /* Absolute positioning */
+  display: flex;
+  position: absolute;
   bottom: 10px;
   right: 10px;
-  display: flex;
-  flex-wrap: wrap; /* Allow buttons to wrap to new line */
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .card1-buttons button {
@@ -71,23 +72,23 @@
   background-color: #ffffff;
   color: #000000;
   cursor: pointer;
-  margin-right: 10px; /* Adjusted margin for smaller screens */
-  margin-bottom: 10px; /* Adjusted margin for smaller screens */
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .card1-buttons button:hover {
-  background-color: #0056b3;
+  background-color: #2ae24c;
 }
 
 .card1-buttons button:active {
-  background-color: #004080;
+  background-color: #00ab42;
 }
 
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
   .card1-buttons {
-    position: static; /* Reset position */
-    margin-top: 10px; /* Adjust margin */
-    justify-content: center; /* Center buttons */
+    position: static;
+    margin-top: 10px;
+    justify-content: center;
   }
 }

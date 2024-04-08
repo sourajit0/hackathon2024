@@ -1,116 +1,108 @@
 import React, { useState } from "react";
-import "./Style/AddProduct.css";
 import { useNavigate } from "react-router-dom";
-
-const ProductFormCard = ({ onSubmitForm }) => {
-  let navigate = useNavigate();
+import { useCurrentUser } from "./Login/CurrentUserContext";
+import "./Style/AddProduct.css";
+const AddProduct = () => {
+  const navigate = useNavigate();
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState("");
   const [productQuantity, setProductQuantity] = useState("");
   const [productImage, setProductImage] = useState(null);
+  const [error, setError] = useState("");
+  const { user } = useCurrentUser();
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setProductImage(file);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = {
-      productName,
-      productPrice,
-      productQuantity,
-      productImage,
-    };
+    if (!productName || !productPrice || !productQuantity || !productImage) {
+      setError("Please fill out all fields");
+      return;
+    }
 
-    onSubmitForm(formData);
+    const formData = new FormData();
+    formData.append("productName", productName);
+    formData.append("productPrice", productPrice);
+    formData.append("productQuantity", productQuantity);
+    formData.append("userId", user); // Assuming user object contains id field
+    formData.append("productImage", productImage);
 
-    navigate("/parent_page");
+    try {
+      const response = await fetch("http://localhost:3001/add-product", {
+        method: "POST",
+        body: formData,
+      });
 
-    // Clear form fields
-    setProductName("");
-    setProductPrice("");
-    setProductQuantity("");
-    setProductImage(null);
+      if (!response.ok) {
+        throw new Error("Failed to add product");
+      }
+
+      alert("Product added successfully");
+      navigate("/parent_page");
+
+      // Clear form fields
+      setProductName("");
+      setProductPrice("");
+      setProductQuantity("");
+      setProductImage(null);
+      setError("");
+    } catch (error) {
+      console.error("Error adding product:", error);
+      setError("Failed to add product");
+    }
   };
 
   return (
-    <div className="form_final">
-      <div className="card-product-form-card">
-        <div className="card-body">
-          <h5 className="card-title" style={{ fontSize: "40px" }}>
-            Upload Product
-          </h5>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label
-                htmlFor="productName"
-                style={{ fontSize: "20px", fontWeight: "10000" }}
-              >
-                Product Name
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="productName"
-                value={productName}
-                onChange={(e) => setProductName(e.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label
-                htmlFor="productPrice"
-                style={{ fontSize: "20px", fontWeight: "10000" }}
-              >
-                Product Price
-              </label>
-              <input
-                type="number"
-                className="form-control"
-                id="productPrice"
-                value={productPrice}
-                onChange={(e) => setProductPrice(e.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label
-                htmlFor="productQuantity"
-                style={{ fontSize: "20px", fontWeight: "10000" }}
-              >
-                Product Quantity
-              </label>
-              <input
-                type="number"
-                className="form-control"
-                id="productQuantity"
-                value={productQuantity}
-                onChange={(e) => setProductQuantity(e.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label
-                htmlFor="productImage"
-                style={{ fontSize: "20px", fontWeight: "10000" }}
-              >
-                Product Image
-              </label>
-              <input
-                type="file"
-                className="form-control-file"
-                id="productImage"
-                accept="image/*"
-                onChange={handleImageChange}
-              />
-            </div>
-            <button type="submit" className="btn-btn-primary">
-              Upload
-            </button>
-          </form>
-        </div>
+    <div className="product-upload-page">
+      <div className="card1000">
+        <h2>Upload Product</h2>
+        {error && <div style={{ color: "red" }}>{error}</div>}
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="productName">Product Name:</label>
+            <input
+              type="text"
+              id="productName"
+              value={productName}
+              onChange={(e) => setProductName(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="productPrice">Product Price:</label>
+            <input
+              type="number"
+              id="productPrice"
+              value={productPrice}
+              onChange={(e) => setProductPrice(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="productQuantity">Product Quantity:</label>
+            <input
+              type="number"
+              id="productQuantity"
+              value={productQuantity}
+              onChange={(e) => setProductQuantity(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="productImage">Product Image:</label>
+            <input
+              type="file"
+              id="productImage"
+              accept="image/*"
+              onChange={handleImageChange}
+            />
+          </div>
+          <button type="submit">Upload</button>
+        </form>
       </div>
     </div>
   );
 };
 
-export default ProductFormCard;
+export default AddProduct;

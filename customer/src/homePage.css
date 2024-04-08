@@ -36,6 +36,11 @@
   .dropdown:hover .dropdown-menu {
     display: block;
   }
+
+  .dropdown-toggle:hover
+  {
+    background-color: #82d757;
+  }
   
   .search-bar {
     margin: 20px auto;

@@ -108,6 +108,76 @@ app.get("/profile/:userId", async (req, res) => {
       .json({ success: false, message: "Failed to fetch user profile" });
   }
 });
+// Add product route
+app.post("/add-product", upload.single("productImage"), async (req, res) => {
+  const { productName, productPrice, productQuantity, userId } = req.body;
+  const productImage = req.file;
+
+  try {
+    if (!productImage) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Product image is required" });
+    }
+
+    const image = fs.readFileSync(productImage.path);
+
+    const connection = await pool.getConnection();
+    await connection.execute(
+      "INSERT INTO Products (product_name, product_price, quantity, image_data, farmer_id) VALUES (?, ?, ?, ?, ?)",
+      [productName, productPrice, productQuantity, image, userId]
+    );
+    connection.release();
+
+    res.json({ success: true, message: "Product uploaded successfully" });
+  } catch (error) {
+    console.error("Error uploading product:", error);
+    res.status(500).json({
+      success: false,
+      message: "An error occurred while uploading product",
+    });
+  }
+});
+
+// index.js
+
+// Assuming you have required all necessary modules and set up your app
+
+// Fetch products by user ID
+// GET /products endpoint to fetch products by user ID
+app.get("/products", async (req, res) => {
+  try {
+    const userId = req.query.userId; // Extract user ID from query parameters
+
+    // If userId is provided, fetch products for the specified user
+    if (userId) {
+      // Fetch products for the specified user from the database
+      const connection = await pool.getConnection();
+      const [rows] = await connection.execute(
+        "SELECT * FROM products WHERE farmer_id = ?",
+        [userId]
+      );
+      connection.release();
+
+      // Send products for the specified user as JSON response
+      res.json({ success: true, products: rows });
+    } else {
+      // If userId is not provided, fetch all products
+      // Fetch all products from the database
+      const connection = await pool.getConnection();
+      const [rows] = await connection.execute("SELECT * FROM products");
+      connection.release();
+
+      // Send all products as JSON response
+      res.json({ success: true, products: rows });
+    }
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    res
+      .status(500)
+      .json({ success: false, message: "Failed to fetch products" });
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
