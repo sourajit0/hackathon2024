@@ -33,6 +33,18 @@ To run the website locally, follow these steps:
 1. **Clone the repository:**
    ```sh
    git clone https://github.com/yourusername/fresh-farm-produce.git
+2. **Navigate to the project directory:**
+    ```sh
+   cd fresh-farm-produce
+3. **Install dependencies:**
+    ```sh
+   npm install
+4. **Start the development server:**
+   ```sh
+   npm start
+5. Open your browser and visit http://localhost:3000 to view the website.
+
+
 ## Usage
 
 - **Browse Products:** Navigate through different categories to find products you like.
@@ -44,12 +56,22 @@ To run the website locally, follow these steps:
 
 We welcome contributions from the community! To contribute:
 
-1. **Fork the repository.**
-2. **Create a new branch:**
-   ```sh
-   git checkout -b feature/your-feature
-  
+1. Fork the repository.
+2. Create a new branch (git checkout -b feature/your-feature).
+3. Commit your changes (git commit -m 'Add your feature').
+4. Push to the branch (git push origin feature/your-feature).
+5. Open a pull request.
+Please ensure your code adheres to our coding standards and includes proper documentation.
+## License
 
-3. **Commit your changes:**
- ```sh
-   git commit -m 'Add your feature'
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## Contact
+
+For questions or feedback, please contact us at:
+
+- **Email:** support@freshfarmproduce.com
+- **Twitter:** [@FreshFarmProd](https://twitter.com/FreshFarmProd)
+- **Facebook:** [Fresh Farm Produce](https://facebook.com/FreshFarmProduce)
+
+Thank you for choosing Fresh Farm Produce! We hope you enjoy the best farm-fresh products delivered straight to your door.
+
