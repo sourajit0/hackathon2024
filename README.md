@@ -1,8 +1,5 @@
 # Fresh Farm Produce Website
 
-## Overview
-
-The Fresh Farm Produce website is an online platform designed to help farmers sell their harvest. It features a user-friendly interface for adding, managing, and listing products, along with a responsive design that adapts to various screen sizes.
 
 # Fresh Farm Produce
 
@@ -39,4 +36,6 @@ To run the website locally, follow these steps:
 1. **Clone the repository:**
    ```sh
    git clone https://github.com/yourusername/fresh-farm-produce.git
+   cd fresh-farm-produce
+
 
