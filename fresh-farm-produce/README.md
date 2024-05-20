@@ -9,7 +9,6 @@ Welcome to **Fresh Farm Produce**! This website is dedicated to providing the fr
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Introduction
@@ -32,7 +31,7 @@ To run the website locally, follow these steps:
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/yourusername/fresh-farm-produce.git
+   git clone https://github.com/sourajit0/hackathon2024.git
 2. **Navigate to the project directory:**
     ```sh
    cd fresh-farm-produce
@@ -69,9 +68,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or feedback, please contact us at:
 
-- **Email:** support@freshfarmproduce.com
-- **Twitter:** [@FreshFarmProd](https://twitter.com/FreshFarmProd)
-- **Facebook:** [Fresh Farm Produce](https://facebook.com/FreshFarmProduce)
+- **Email:** akashdipghosh1023@gmail.com
+
 
 Thank you for choosing Fresh Farm Produce! We hope you enjoy the best farm-fresh products delivered straight to your door.
 
