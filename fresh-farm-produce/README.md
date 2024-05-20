@@ -2,7 +2,7 @@
 
 Welcome to **Fresh Farm Produce**! This website is dedicated to providing the freshest and highest quality farm products directly from local farms to your table. Our mission is to support local farmers and deliver healthy, organic produce to our community.
 
-## Table of Contents
+## Table of Contents 
 
 - [Introduction](#introduction)
 - [Features](#features)
